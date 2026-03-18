@@ -48,8 +48,8 @@
          setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
       
          setFont(new Font("Courier New" /*"Monospaced"*/,Font.PLAIN,14));
-         setForeground(Color.black);
-         setBackground(Color.white);
+         setForeground(new Color(212, 212, 212));
+         setBackground(new Color(30, 30, 30));
       
          tabSizeChars = defaults.tabSize;
          blockCaret = defaults.blockCaret;
