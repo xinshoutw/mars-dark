@@ -245,8 +245,10 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    	 *  If you wish to change, do so before instantiating the Settings object.
    	 *  Must match key by list position.
    	 */
-      private static String[] defaultColorSettingsValues = { 
-                 "0x00e0e0e0", "0", "0x00ffffff", "0", "0x00ffff99", "0", "0x0033ff00", "0", "0x0099ccff", "0", "0x0099cc55","0" };
+      private static String[] defaultColorSettingsValues = {
+                 "0x00252526", "0x00D4D4D4", "0x001E1E1E", "0x00D4D4D4",
+                 "0x00665500", "0x00D4D4D4", "0x00264F00", "0x00D4D4D4",
+                 "0x00264F78", "0x00D4D4D4", "0x00395522", "0x00D4D4D4" };
       
    
       
