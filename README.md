@@ -1,12 +1,65 @@
-# MARS
-MARS (official) MIPS Assembler and Runtime Simulator
+# MARS Dark Mode
 
- MARS is a lightweight interactive development environment (IDE) for programming in MIPS assembly language, intended for educational-level use with Patterson and Hennessy's Computer Organization and Design.
+MARS (MIPS Assembler and Runtime Simulator) 4.5 with dark mode support, powered by [FlatLaf](https://www.formdev.com/flatlaf/).
 
- It is available for you to download as an executable JAR file.  Click the MARS v.4.5 link at right, under Releases, to access the download.
+Forked from [dpetersanderson/MARS](https://github.com/dpetersanderson/MARS).
 
- We have relocated the MARS website to  https://dpetersanderson.github.io/    There are still a couple of display issues to work out but all website content is there.  This includes all documentation and the JAR download.  We are not experienced in github so if you know a way we can host the website in this MARS repository let us know.
+## Features
 
- This is the original MARS, developed by Pete Sanderson and Ken Vollmar.  Developed while Pete was professor at Otterbein University and Ken was professor at Missouri State University.  Both are now retired. This is a legacy application but is very stable and continues to be used by universities throughout the world as of 2024. The last release was MARS 4.5 in August 2014.  
- 
- Until October 2024 the MARS website, including executable JAR file download, was hosted by Missouri State University. That is no longer the case. That's why it is here.
+- FlatLaf Dark theme applied to the entire MARS UI (menus, toolbars, dialogs, tables, etc.)
+- Editor area with dark background (`#1E1E1E`) and light text (`#D4D4D4`)
+- VS Code Dark+ syntax highlighting color scheme
+- Dark-themed register/data/text segment tables with matching row colors
+- Dark-themed caret, selection, and line highlight colors
+
+## Usage
+
+Download `mars-dark.jar` from the [Releases](../../releases) page, then run:
+
+```bash
+java -jar mars-dark.jar
+```
+
+Requires Java 11 or later.
+
+## Building from Source
+
+```bash
+git clone https://github.com/xinshoutw/mars-dark.git
+cd mars-dark
+./gradlew shadowJar
+java -jar build/libs/mars-dark.jar
+```
+
+## What's Changed
+
+| File | Change |
+|------|--------|
+| `MarsLauncher.java` | New entry point — sets `FlatDarkLaf` + UIManager dark overrides |
+| `mars/Settings.java` | Default row/highlight colors changed to dark variants |
+| `mars/venus/editors/jeditsyntax/TextAreaPainter.java` | Editor foreground/background → dark |
+| `mars/venus/editors/jeditsyntax/TextAreaDefaults.java` | Caret → white, selection → dark blue, line highlight → dark gray |
+| `mars/venus/editors/jeditsyntax/SyntaxUtilities.java` | Syntax styles → VS Code Dark+ color scheme |
+
+### Syntax Color Mapping
+
+| Token | Color | Description |
+|-------|-------|-------------|
+| NULL | `#D4D4D4` | Default text |
+| COMMENT | `#6A9955` | Comments (green) |
+| KEYWORD1 | `#569CD6` | Instructions (blue) |
+| KEYWORD2 | `#9CDCFE` | Registers (light blue) |
+| KEYWORD3 | `#C586C0` | Directives (purple) |
+| LITERAL1 | `#CE9178` | String literals (orange) |
+| LITERAL2 | `#B5CEA8` | Numeric literals (light green) |
+| LABEL | `#DCDCAA` | Labels (yellow) |
+| MACRO_ARG | `#4EC9B0` | Macro arguments (teal) |
+
+## Credits
+
+- [MARS](https://github.com/dpetersanderson/MARS) by Pete Sanderson and Ken Vollmar
+- [FlatLaf](https://www.formdev.com/flatlaf/) by FormDev Software GmbH
+
+## License
+
+MARS is distributed under the MIT License. FlatLaf is licensed under the Apache License 2.0.
